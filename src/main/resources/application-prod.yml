@@ -1,0 +1,11 @@
+spring:
+  h2:
+    console:
+      enabled: false
+  datasource:
+    url: jdbc:h2:file:/data/drone_db
+
+server:
+  tomcat:
+    accesslog:
+      directory: "logs/prod/drone-manager-access"

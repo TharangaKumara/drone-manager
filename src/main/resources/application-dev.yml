@@ -1,0 +1,9 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+server:
+  tomcat:
+    accesslog:
+      directory: "logs/dev/drone-manager-access"
