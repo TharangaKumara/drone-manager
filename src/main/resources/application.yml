@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: drone-manager
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:h2:mem:drone-manager-db
+    username: drone
+    password: drone
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+server:
+  port: 8080
+  servlet:
+    context-path: /drone-manager
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: "/logs/drone-manager"
+      prefix: access_log
+      buffered: false
+      suffix: .log
+      file-date-format: .yyyy-MM-dd
+      pattern: "%h %l %u %t %r %s %b %D"
